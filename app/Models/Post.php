@@ -10,4 +10,14 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = ['title', 'content'];
+
+    /**
+     * Get the user that owns the Post
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
